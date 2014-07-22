@@ -1,0 +1,43 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<polymer-element name="box-builder">
+	<template>
+		<style>
+			label {
+				color:blue;
+				font-family: Arial;
+				font-size:14px;
+			}
+			input {
+				display:block;
+				border:1px solid #ccc;
+				padding:5px;
+			}
+			div {
+				transition: all 0.2s ease;
+				-webkit-transition: all 0.2s ease;
+				float:right;
+			}
+		</style>
+		<div id="lvContentBox" style="height: {{height}}px; width:{{width}}px; border-left: {{borderWidth}}px {{borderType}} {{borderColor}}; border-right: {{borderWidth}}px {{borderType}} {{borderColor}}; border-bottom: {{borderWidth}}px {{borderType}} {{borderColor}}; border-top: {{borderWidth+2}}px {{borderType}} {{borderColor}}"></div>
+		<label for="contentWidth">Content Box Width</label>
+		<input id="boxWidth" value="{{width}}"type="text" placeholder="Enter width...">
+		<label for="boxHeight">Content Box Height</label>
+	    <input id="boxHeight" value="{{height}}"type="text" placeholder="Enter height...">
+	    <label for="boxBorderWidth">Content Box Border Width</label>
+	    <input id="boxBorderWidth" value="{{borderWidth}}" type="text" placeholder="Enter border width...">
+	    <label for="boxBorderType">Content Box Border Type</label>
+	    <input id="boxBorderType" value="{{borderType}}" type="text" placeholder="Enter border type...">
+	    <label  for="boxBorderColor">Content Box Border Color</label>
+	    <input id="boxBorderColor" value="{{borderColor}}"type="text" placeholder="Enter border color...">
+	</template>
+	    
+	<script>
+		Polymer('box-builder', {
+			height: 300,
+			width: 600,
+			borderWidth: 1,
+			borderType:'solid',
+			borderColor: '#ccc'
+		});
+	</script>
+</polymer-element>
